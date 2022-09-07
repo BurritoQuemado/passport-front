@@ -1,10 +1,15 @@
-import Layout from './components/layout'
-import MainContent from './components/mainContent';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/home';
+import Equipment from './pages/equipment';
+import Layout from './components/layout';
 
 function App() {
   return (
     <Layout>
-      <MainContent />
+      <Routes>
+        <Route path="/" element={ <Home /> } />
+        <Route path="/equipos" element={ <Equipment /> } />
+      </Routes>
     </Layout>
   );
 }
