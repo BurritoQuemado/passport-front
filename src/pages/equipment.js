@@ -1,7 +1,7 @@
-import EquipmentList from "../components/equipmentList";
+import EquipmentCard from "../components/equipmentCard";
 
-export default function Equipments() {
+export default function Equipment() {
     return(
-        <EquipmentList /> 
+        <EquipmentCard />
     );
 }
