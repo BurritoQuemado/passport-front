@@ -3,6 +3,7 @@ import Home from './pages/home';
 import Equipments from './pages/equipments';
 import Equipment from './pages/equipment';
 import PageNotFound from './pages/pageNotFound';
+import LoginPage from './pages/login';
 import Layout from './components/layout';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={ <Home /> } />
         <Route path="/equipos" element={ <Equipments /> } />
         <Route path="/equipo/:eqName" element={ <Equipment /> } />
+        <Route path='/login' element={ <LoginPage /> } />
         <Route path="*" element={ <PageNotFound /> } />
       </Routes>
     </Layout>
