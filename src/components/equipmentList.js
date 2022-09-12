@@ -17,7 +17,7 @@ export default function EquipmentList() {
               <div className="flex flex-1 flex-col justify-between bg-white p-6">
                 <div className="flex-1">
                   <Link to={"/equipo/"+equipo.name}>
-                    <p className="text-xl font-semibold text-gray-900 uppercase">{equipo.name}</p>
+                    <p className="text-xl font-semibold text-gray-900">{equipo.name}</p>
                   </Link>
                   <p className="mt-3 text-base text-gray-500">{equipo.highlight}</p>
                 </div>
