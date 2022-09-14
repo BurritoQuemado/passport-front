@@ -32,7 +32,7 @@ export default function Layout({children}) {
     <div className="bg-white">
       <div className="relative overflow-hidden">
         <Popover as="header" className="relative">
-          <div className="bg-white pt-6 pb-6">
+          <div className="bg-white pt-6 pb-0">
             <nav
               className="relative mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6"
               aria-label="Global"
@@ -67,11 +67,11 @@ export default function Layout({children}) {
                 </div>
               </div>
               <div className="hidden md:flex md:items-center md:space-x-6">
-                <Link to="#" className="text-base font-medium text-azul_abalat">
+                <Link to="/registro" className="text-base font-medium text-azul_abalat">
                   Registrarse
                 </Link>
                 <Link
-                  to="#"
+                  to="login"
                   className="inline-flex items-center rounded-md border border-transparent bg-azul_abalat px-4 py-2 text-base font-medium text-white"
                 >
                   Ingresar
@@ -123,7 +123,7 @@ export default function Layout({children}) {
                   </div>
                   <div className="mt-6 px-5">
                     <Link
-                      to="#"
+                      to="/registro"
                       className="block w-full rounded-md bg-gradient-to-r bg-azul_abalat py-3 px-4 text-center font-medium text-white shadow hover:from-teal-600 hover:to-cyan-700"
                     >
                       Registrarse
@@ -132,7 +132,7 @@ export default function Layout({children}) {
                   <div className="mt-6 px-5">
                     <p className="text-center text-base font-medium text-gray-500">
                       Ya tengo una cuenta.{' '}
-                      <Link to="#" className="text-gray-900 hover:underline">
+                      <Link to="/login" className="text-morado_abalat hover:underline">
                         Ingresar
                       </Link>
                     </p>
