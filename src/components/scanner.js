@@ -91,22 +91,22 @@ export class Scanner extends Component {
           </div>
           {
             this.state.valid_qr ? 
-            <div className='justify-center mt-6'>
-              <h1 className='text-center'>Bien hecho has conseguido el sello de {this.state.visited_equipment}</h1>
-              <img
-                  className="mx-auto h-32 w-auto"
-                  src={ ImgSello }
-                  alt="Abalat"
-              />
-             <div className="px-4 py-3 text-center sm:px-6">
-                  <button
-                      onClick={this.cleanScan}
-                      className="inline-flex justify-center rounded-md border border-transparent bg-azul_abalat py-2 px-4 text-sm lg:text-2xl lg:font-semibold font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-azul_abalat focus:ring-offset-2"
-                  >
-                      Volver a escanear
-                  </button>
+              <div className='justify-center mt-6'>
+                <h1 className='text-center'>Bien hecho has conseguido el sello de {this.state.visited_equipment}</h1>
+                <img
+                    className="mx-auto h-32 w-auto"
+                    src={ ImgSello }
+                    alt="Abalat"
+                />
+              <div className="px-4 py-3 text-center sm:px-6">
+                    <button
+                        onClick={this.cleanScan}
+                        className="inline-flex justify-center rounded-md border border-transparent bg-azul_abalat py-2 px-4 text-sm lg:text-2xl lg:font-semibold font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-azul_abalat focus:ring-offset-2"
+                    >
+                        Volver a escanear
+                    </button>
+                </div>
               </div>
-            </div>
             : null
           }
         </div>
