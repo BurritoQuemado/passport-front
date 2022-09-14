@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors: {
         teal: colors.teal,
-        cyan: colors.cyan
+        cyan: colors.cyan,
+        azul_abalat: '#0075C9'
       },
     },
   },

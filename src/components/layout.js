@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { Popover, Transition } from '@headlessui/react'
+import LogoAbalat from '../media/logo.png'
 import {
   Bars3Icon,
   XMarkIcon,
@@ -31,7 +32,7 @@ export default function Layout({children}) {
     <div className="bg-white">
       <div className="relative overflow-hidden">
         <Popover as="header" className="relative">
-          <div className="bg-gray-900 pt-6 pb-6">
+          <div className="bg-white pt-6 pb-6">
             <nav
               className="relative mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6"
               aria-label="Global"
@@ -41,13 +42,13 @@ export default function Layout({children}) {
                   <Link to="/">
                     <span className="sr-only">Pasaporte Abalat</span>
                     <img
-                      className="h-8 w-auto sm:h-10"
-                      src="https://tailwindui.com/img/logos/mark.svg?from-color=teal&from-shade=200&to-color=cyan&to-shade=400&toShade=400"
+                      className="h-20 w-auto lg:h-28"
+                      src={LogoAbalat}
                       alt="pasaporte_abalat"
                     />
                   </Link>
                   <div className="-mr-2 flex items-center md:hidden">
-                    <Popover.Button className="focus-ring-inset inline-flex items-center justify-center rounded-md bg-gray-900 p-2 text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-white">
+                    <Popover.Button className="focus-ring-inset inline-flex items-center justify-center rounded-md bg-azul_abalat p-2 text-white focus:outline-none focus:ring-2 focus:ring-white">
                       <span className="sr-only">Open main menu</span>
                       <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                     </Popover.Button>
@@ -66,17 +67,18 @@ export default function Layout({children}) {
                 </div>
               </div>
               <div className="hidden md:flex md:items-center md:space-x-6">
-                <Link to="#" className="text-base font-medium text-white hover:text-gray-300">
+                <Link to="#" className="text-base font-medium text-azul_abalat">
                   Registrarse
                 </Link>
                 <Link
                   to="#"
-                  className="inline-flex items-center rounded-md border border-transparent bg-gray-600 px-4 py-2 text-base font-medium text-white hover:bg-gray-700"
+                  className="inline-flex items-center rounded-md border border-transparent bg-azul_abalat px-4 py-2 text-base font-medium text-white"
                 >
                   Ingresar
                 </Link>
               </div>
             </nav>
+            <hr className='bg-azul_abalat w-full h-2 lg:h-4' />
           </div>
 
           <Transition
@@ -94,8 +96,8 @@ export default function Layout({children}) {
                   <div>
                     <Link to='/'>
                     <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/mark.svg?from-color=teal&from-shade=500&to-color=cyan&to-shade=600&toShade=600"
+                      className="h-20 w-auto"
+                      src={LogoAbalat}
                       alt="pasaporte abalat"
                     />
                     </Link>
@@ -122,16 +124,16 @@ export default function Layout({children}) {
                   <div className="mt-6 px-5">
                     <Link
                       to="#"
-                      className="block w-full rounded-md bg-gradient-to-r from-teal-500 to-cyan-600 py-3 px-4 text-center font-medium text-white shadow hover:from-teal-600 hover:to-cyan-700"
+                      className="block w-full rounded-md bg-gradient-to-r bg-azul_abalat py-3 px-4 text-center font-medium text-white shadow hover:from-teal-600 hover:to-cyan-700"
                     >
                       Registrarse
                     </Link>
                   </div>
                   <div className="mt-6 px-5">
                     <p className="text-center text-base font-medium text-gray-500">
-                      Existing customer?{' '}
+                      Ya tengo una cuenta.{' '}
                       <Link to="#" className="text-gray-900 hover:underline">
-                        Login
+                        Ingresar
                       </Link>
                     </p>
                   </div>
@@ -153,7 +155,7 @@ export default function Layout({children}) {
                 <div className="md:grid md:grid-cols-1 md:gap-8">
                   <div className="mt-12 md:mt-0">
                     <h3 className="text-base font-medium text-gray-900">Legal</h3>
-                    <ul role="list" className="mt-4 space-y-4">
+                    <ul className="mt-4 space-y-4">
                       {footerNavigation.legal.map((item) => (
                         <li key={item.name}>
                           <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
