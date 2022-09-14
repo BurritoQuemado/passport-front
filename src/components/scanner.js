@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import QrReader from 'react-qr-scanner';
 import ImgSello from '../media/sello.png'
+
 const valid_scans = [
   {
     id: 'ARGN-080',
@@ -62,11 +63,10 @@ export class Scanner extends Component {
           valid_qr: this.validateQR(data.text)
         });
       }
-      console.log(this.state.valid_qr);
     };
 
     handleError = (err) => {
-      console.error(err);
+      alert('Algo ha salido mal.')
     }
 
     cleanScan = () => {
