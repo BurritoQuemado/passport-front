@@ -57,7 +57,7 @@ export default function Layout({children}) {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="text-base font-medium text-white hover:text-gray-300"
+                      className="text-base font-medium text-azul_abalat hover:text-gray-300"
                     >
                       {item.name}
                     </Link>
@@ -113,7 +113,7 @@ export default function Layout({children}) {
                       <Link
                         key={item.name}
                         to={item.href}
-                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                        className="block rounded-md px-3 py-2 text-base font-medium text-black"
                       >
                         {item.name}
                       </Link>
