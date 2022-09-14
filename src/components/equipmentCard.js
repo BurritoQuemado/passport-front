@@ -21,14 +21,14 @@ export default function EquipmentCard() {
               <h2 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {activeEq.name}
               </h2>
-              <p className="mt-6 text-lg font-semibold text-gray-500">
+              <p className="mt-6 text-lg text-black">
                 {activeEq.highlight}
               </p>
-              <p className="mt-6 text-lg text-gray-500">
+              <p className="mt-6 text-lg text-black">
                 {activeEq.description}
               </p>
               { activeEq.description_extra?
-                <p className="mt-6 text-lg text-gray-500">
+                <p className="mt-6 text-lg text-black">
                   {activeEq.description_extra}
                 </p>
                 : null
@@ -39,7 +39,7 @@ export default function EquipmentCard() {
                     activeEq.extras.map((extra) => (
                     <div className="flex flex-col px-8 pt-8">
                       <dt className="order-2 text-base font-medium text-gray-500">{extra.title}</dt>
-                      <dd className="order-1 text-2xl font-bold text-indigo-600 sm:text-3xl sm:tracking-tight uppercase">{extra.data}</dd>
+                      <dd className="order-1 text-2xl font-bold text-azul_abalat sm:text-3xl sm:tracking-tight uppercase">{extra.data}</dd>
                     </div>
                     ))}
                 </dl>
