@@ -1,12 +1,22 @@
 import { equipos } from "./equipmentInfo"
 import { Link } from "react-router-dom"
-import ImgSello from '../media/sello_test.png'
+import ImgSello from '../media/sello.png'
   
 export default function EquipmentList() {
   return (
     <>
         <div className="text-center px-4 pt-16 pb-10 sm:px-2 lg:px-8 lg:pt-24 lg:pb-10">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl uppercase">Equipos participantes</h2>
+        </div>
+        <div className="px-4 py-3 text-right sm:px-6 ">
+          <div className="rounded-md shadow">
+            <Link
+              to="/escanear"
+              className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
+            >
+              Escanear QR
+            </Link>
+          </div>
         </div>
         <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-fit lg:grid-cols-2  px-4 pb-20 sm:px-2 lg:px-8 lg:pt-12 lg:pb-28">
           {equipos.map((equipo) => (
