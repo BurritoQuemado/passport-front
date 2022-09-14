@@ -36,9 +36,9 @@ export default function LoginForm() {
 
       <div className="flex items-center justify-between">
         <div className="text-sm">
-          <a href="#" className="font-medium text-azul_abalat hover:text-azul_abalat">
+          <button className="font-medium text-azul_abalat hover:text-azul_abalat">
             Recuperar contraseña
-          </a>
+          </button>
         </div>
       </div>
 
