@@ -5,6 +5,7 @@ import Equipment from './pages/equipment';
 import PageNotFound from './pages/pageNotFound';
 import LoginPage from './pages/login';
 import RegisterPage from './pages/register';
+import Escanear from './pages/escanear';
 import Layout from './components/layout';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/equipo/:eqName" element={ <Equipment /> } />
         <Route path='/login' element={ <LoginPage /> } />
         <Route path='/registro' element={ <RegisterPage /> } />
+        <Route path="/escanear" element={ <Escanear /> } />
         <Route path="*" element={ <PageNotFound /> } />
       </Routes>
     </Layout>
