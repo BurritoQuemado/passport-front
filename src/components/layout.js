@@ -156,7 +156,7 @@ export default function Layout({children}) {
                     <ul className="mt-4 space-y-4">
                       {footerNavigation.legal.map((item) => (
                         <li key={item.name}>
-                          <a target="_blank" href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                          <a target="_blank" rel='noreferrer' href={item.href} className="text-base text-gray-500 hover:text-gray-900">
                             {item.name}
                           </a>
                         </li>
