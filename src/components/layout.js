@@ -21,9 +21,7 @@ const navigation = [
 const footerNavigation = {
 
   legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    { name: 'Aviso de Privacidad', href: 'https://www.abalat.mx/aviso-de-privacidad' },
   ],
 }
 
@@ -124,7 +122,7 @@ export default function Layout({children}) {
                   <div className="mt-6 px-5">
                     <Link
                       to="/registro"
-                      className="block w-full rounded-md bg-gradient-to-r bg-azul_abalat py-3 px-4 text-center font-medium text-white shadow hover:from-teal-600 hover:to-cyan-700"
+                      className="block w-full rounded-md bg-azul_abalat py-3 px-4 text-center font-medium text-white shadow hover:from-teal-600 hover:to-cyan-700"
                     >
                       Registrarse
                     </Link>
@@ -158,7 +156,7 @@ export default function Layout({children}) {
                     <ul className="mt-4 space-y-4">
                       {footerNavigation.legal.map((item) => (
                         <li key={item.name}>
-                          <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                          <a target="_blank" href={item.href} className="text-base text-gray-500 hover:text-gray-900">
                             {item.name}
                           </a>
                         </li>
