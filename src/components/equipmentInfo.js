@@ -1,9 +1,9 @@
-import AlinityImg from '../media/equipos/alinity.jpeg'
+import AlinityImg from '../media/equipos/alinity.png'
 import IngeniusImg from '../media/equipos/ingenius.png'
-import LuminexImg from '../media/equipos/luminex.jpeg'
-import MiSeqImg from '../media/equipos/miSeq.webp'
-import Pentra80Img from '../media/equipos/pentra80XL.jpg'
-import ReveosImg from '../media/equipos/reveos.jpeg'
+import LuminexImg from '../media/equipos/luminex.png'
+import MiSeqImg from '../media/equipos/miSeq.png'
+import Pentra80Img from '../media/equipos/pentra80XL.png'
+import ReveosImg from '../media/equipos/reveos.png'
 import TrimaImg from '../media/equipos/trima.png'
 
 export const equipos = [
@@ -27,7 +27,7 @@ export const equipos = [
             data: "1350 pruebas/hora"
         },
     ],
-    sellado: false,
+    sellado: true,
   },
   {
     name: "InGenius",
