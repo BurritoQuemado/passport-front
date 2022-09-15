@@ -16,7 +16,7 @@ const valid_scans = [
     name: 'Luminex'
   },
   {
-    id: '1237',
+    id: 'ARGN-081',
     name: 'MiSeq'
   },
   {
@@ -34,7 +34,7 @@ const valid_scans = [
 ];
 
 
-export class Scanner extends Component {
+class Scanner extends Component {
     state = {
       delay: 100,
       result: "no data",
@@ -103,7 +103,7 @@ export class Scanner extends Component {
                         onClick={this.cleanScan}
                         className="inline-flex justify-center rounded-md border border-transparent bg-azul_abalat py-2 px-4 text-sm lg:text-2xl lg:font-semibold font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-azul_abalat focus:ring-offset-2"
                     >
-                        Volver a escanear
+                        Escanear otro QR
                     </button>
                 </div>
               </div>
@@ -113,3 +113,5 @@ export class Scanner extends Component {
       );
     }
 }
+
+export default Scanner;

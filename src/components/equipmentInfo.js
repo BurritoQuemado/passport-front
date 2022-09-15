@@ -100,7 +100,7 @@ export const equipos = [
             data: "2 lecturas de extremos emparejados en 300 pb  en una sola ejecución"
         },
     ],
-    sellado: false,
+    sellado: true,
   },
   {
     name: "Pentra 80 XL",

@@ -10,12 +10,16 @@ import {
 
 const navigation = [
     { 
-        name: 'Inicio', 
-        href: '/' 
+      name: 'Inicio', 
+      href: '/' 
     },
+]
+
+const navigation_logged = [
     { 
-        name: 'Equipos',
-        href: '/equipos' },
+      name: 'Equipos',
+      href: '/equipos'
+    },
 ]
 
 const footerNavigation = {
@@ -24,6 +28,8 @@ const footerNavigation = {
     { name: 'Aviso de Privacidad', href: 'https://www.abalat.mx/aviso-de-privacidad' },
   ],
 }
+
+const logged = false;
 
 export default function Layout({children}) {
   return (
@@ -62,6 +68,18 @@ export default function Layout({children}) {
                       {item.name}
                     </Link>
                   ))}
+                  {
+                    logged ? (navigation_logged.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className="text-base font-medium text-azul_abalat hover:text-gray-300"
+                      >
+                        {item.name}
+                      </Link>
+                    )))
+                    : null
+                  }
                 </div>
               </div>
               <div className="hidden md:flex md:items-center md:space-x-6">
@@ -118,7 +136,28 @@ export default function Layout({children}) {
                         {item.name}
                       </Link>
                     ))}
+                    {
+                      logged ? navigation_logged.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className="block rounded-md px-3 py-2 text-base font-medium text-black"
+                        >
+                          {item.name}
+                        </Link>
+                      ))
+                      : null
+                    }
                   </div>
+                  { logged ? <div className="mt-6 px-5">
+                    <Link
+                      to="/registro"
+                      className="block w-full rounded-md bg-azul_abalat py-3 px-4 text-center font-medium text-white shadow hover:from-teal-600 hover:to-cyan-700"
+                    >
+                      Salir
+                    </Link>
+                  </div> : 
+                  <>
                   <div className="mt-6 px-5">
                     <Link
                       to="/registro"
@@ -135,6 +174,8 @@ export default function Layout({children}) {
                       </Link>
                     </p>
                   </div>
+                  </> }
+                  
                 </div>
               </div>
             </Popover.Panel>
@@ -168,7 +209,7 @@ export default function Layout({children}) {
             </div>
             <div className="mt-12 border-t border-gray-200 py-8">
               <p className="text-base text-gray-400 xl:text-center">
-                &copy; 2022 Polar Multimedia S de RL de CV. Todos los derechos reservados.
+                &copy; 2022 2021 ABALAT S.A. de C.V. Todos los derechos reservados.
               </p>
             </div>
           </div>
