@@ -29,8 +29,7 @@ class LoginForm extends Component {
       })
     })
     .then(response => response.json())
-    .then(console.log)
-    console.log(this.state);
+    .then(data => {data.id? console.log(data.id) : console.log(data)})
   }
 
   onEmailChange = (event) => {

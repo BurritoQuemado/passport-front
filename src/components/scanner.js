@@ -2,59 +2,57 @@ import React, { Component } from 'react';
 import QrReader from 'react-qr-scanner';
 import ImgSello from '../media/sello.png'
 
-const valid_scans = [
-  {
-    id: 'ARGN-080',
-    name: 'Alinity'
-  },
-  {
-    id: '1235',
-    name: 'InGenius'
-  },
-  {
-    id: '1236',
-    name: 'Luminex'
-  },
-  {
-    id: 'ARGN-081',
-    name: 'MiSeq'
-  },
-  {
-    id: '1238',
-    name: 'Pentra 80 XL'
-  },
-  {
-    id: '1239',
-    name: 'Reveos'
-  },
-  {
-    id: '1232',
-    name: 'TrimaAccel'
-  }
-];
-
-
 class Scanner extends Component {
-    state = {
-      delay: 100,
-      result: "no data",
-      valid_qr: false,
-      visited_equipment: ""
-    };
+    constructor(){
+      super();
+      this.state = {
+        delay: 1000,
+        result: "no data",
+        valid_qr: false,
+        visited_equipment: "",
+        valid_scans: []
+      }
+    }
 
+    componentDidMount(){
+      fetch('http://localhost:3000/equipment')
+      .then(response => response.json())
+      .then(equipment => {
+        console.log(equipment)
+        this.setState({valid_scans: equipment})
+      })
+      .then(console.log(this.state.valid_scans));
+    }
+
+    
     validateQR = (text) => {
-        let found = false;
-        valid_scans.forEach(valid => {
-          if(valid.id === text){
-            found = true;
-            this.setState({
-              visited_equipment: valid.name
-            });
-            //send data too
-          }
-        });
-        return found;
+      let found = false;
+      this.state.valid_scans.forEach(valid => {
+        if(valid.id === text){
+          found = true;
+          this.setState({
+            visited_equipment: valid.name
+          });
+        }
+      });
+      if(found) {
+        this.sendData();
+      }
+      return found;
     } 
+    
+    sendData = () => {
+      fetch('http://localhost:3000/attend', {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          id: '124',
+          equipment: this.state.visited_equipment
+        })
+      })
+      .then(response => response.json())
+      .then(console.log)
+    }
 
     handleScan = (data) => {
       if(data != null){
