@@ -16,7 +16,7 @@ export default function RegisterPage(){
 
                 <div className="mt-8 mx-auto w-full max-w-md lg:mx-0 lg:w-screen lg:max-w-full">
                     <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-                        <RegisterForm />
+                        <RegisterForm navi  />
                     </div>
                 </div>
             </div>
