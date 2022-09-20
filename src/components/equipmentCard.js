@@ -1,10 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { equipos } from "./equipmentInfo";
 
 export default function EquipmentCard() {
     const { eqName } = useParams();
-
+    const navigate = useNavigate();
     const activeEq = equipos.find(equipo => equipo.name === eqName);
+
+    const backToEquipmentList = () => {
+      navigate('/equipos')
+    }
 
     return(
       <>
@@ -37,13 +41,23 @@ export default function EquipmentCard() {
                 <dl className="-mx-8 -mt-8 flex flex-wrap">
                   {
                     activeEq.extras.map((extra) => (
-                    <div className="flex flex-col px-8 pt-8">
+                    <div key={extra.title} className="flex flex-col px-8 pt-8">
                       <dt className="order-2 text-base font-medium text-gray-500">{extra.title}</dt>
                       <dd className="order-1 text-2xl font-bold text-azul_abalat sm:text-3xl sm:tracking-tight uppercase">{extra.data}</dd>
                     </div>
                     ))}
                 </dl>
               </div>
+            </div>
+          </div>
+          <div className='justify-center mt-6'>
+            <div className="px-4 py-3 text-center sm:px-6">
+                <button
+                    onClick={backToEquipmentList}
+                    className="inline-flex justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm lg:text-2xl lg:font-semibold font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-azul_abalat focus:ring-offset-2"
+                >
+                    Regresar
+                </button>
             </div>
           </div>
         </div>
