@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/home';
 import Equipments from './pages/equipments';
@@ -11,47 +11,49 @@ import Layout from './components/layout';
 
 
 
-class App extends Component {
+function App () {
 
-  constructor(){
-    super();
-    this.state = {
-      logged: false,
-      user_id: ''
+  const [user_id, setUserId] = useState(sessionStorage.getItem("user_id") || '');
+  const [logged, setLogged] = useState(sessionStorage.getItem("user_id") || false);
+
+  const setLoggedIn = (logged, user_id) => {
+    setLogged(logged);
+    setUserId(user_id);
+    sessionStorage.setItem("user_id", user_id);
+    sessionStorage.setItem("logged", logged);
+  }
+
+  const logout = () => {
+    setLogged(false);
+    setUserId('')
+    sessionStorage.setItem("user_id", null);
+    sessionStorage.setItem("logged", null);
+  }
+
+  useEffect(() => {
+    var current_user = sessionStorage.getItem("user_id");
+    var current_logged = sessionStorage.getItem("logged");
+    console.log(typeof(current_user));
+    console.log(current_logged);
+    if(current_user !== null || current_logged !== null) {
+      setLoggedIn(current_logged, current_user);
     }
-  }
+    console.log(user_id)
+  }, []);
 
-  setLoggedIn = (logged, user_id) => {
-    this.setState({
-      logged: logged,
-      user_id: user_id
-    }, () => {
-      console.log(this.state)
-    })
-  }
-
-  logout = () => {
-    this.setState({
-      logged: false,
-      user_id: ''
-    })
-  }
-
-  render(){
-    return (
-      <Layout logged_in={this.state.logged} logout={this.logout}>
-        <Routes>
-          <Route path="/" element={ <Home logged_in={this.state.logged} /> } />
-          <Route path="/equipos" element={ <Equipments user_id={this.state.user_id} /> } />
-          <Route path="/equipo/:eqName" element={ <Equipment /> } />
-          <Route path='/login' element={ <LoginPage setLoggedIn={this.setLoggedIn} /> } />
-          <Route path='/registro' element={ <RegisterPage /> } />
-          <Route path="/escanear" element={ <Escanear user_id={this.state.user_id} /> } />
-          <Route path="*" element={ <PageNotFound /> } />
-        </Routes>
-      </Layout>
-    );
-  }
+  return (
+    <Layout logged_in={logged} logout={logout}>
+      <Routes>
+        <Route path="/" element={ <Home logged_in={logged} /> } />
+        <Route path="/equipos" element={ <Equipments user_id={user_id} /> } />
+        <Route path="/equipo/:eqName" element={ <Equipment /> } />
+        <Route path='/login' element={ <LoginPage setLoggedIn={setLoggedIn} /> } />
+        <Route path='/registro' element={ <RegisterPage /> } />
+        <Route path="/escanear" element={ <Escanear user_id={user_id} /> } />
+        <Route path="*" element={ <PageNotFound /> } />
+      </Routes>
+    </Layout>
+  );
 }
 
 export default App;
