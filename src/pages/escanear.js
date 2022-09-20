@@ -1,20 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Scanner from "../components/scanner";
+import { useNavigate } from 'react-router-dom';
 
-export default class Escanear extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            user_id: this.props.user_id,
-        }
+export default function Escanear (props) {
+    const navigate = useNavigate();
+
+    const backToEquipmentList = () => {
+        navigate('/equipos');
     }
 
-
-    render(){
-        return (
-            <>
-                <Scanner user_id={this.state.user_id} />
-            </>
-        );
-    }
+    return (
+        <>
+            <Scanner user_id={props.user_id} backToEquipmentList={backToEquipmentList} />
+        </>
+    );
 }
