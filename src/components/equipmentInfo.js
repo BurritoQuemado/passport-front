@@ -27,7 +27,6 @@ export const equipos = [
             data: "1350 pruebas/hora"
         },
     ],
-    sellado: true,
   },
   {
     name: "InGenius",
@@ -49,7 +48,6 @@ export const equipos = [
             data: "Resultados en 2h30"
         },
     ],
-    sellado: false,
   },
   {
     name: "Luminex",
@@ -74,7 +72,6 @@ export const equipos = [
             data: "<30 minutos"
         },
     ],
-    sellado: false,
   },
   {
     name: "MiSeq",
@@ -100,7 +97,6 @@ export const equipos = [
             data: "2 lecturas de extremos emparejados en 300 pb  en una sola ejecución"
         },
     ],
-    sellado: true,
   },
   {
     name: "Pentra 80 XL",
@@ -121,7 +117,6 @@ export const equipos = [
             data: "QC exportable al programa QCP"
         },
     ],
-    sellado: false,
   },
   {
     name: "Reveos",
@@ -138,7 +133,6 @@ export const equipos = [
             data: "Procesamiento de 2 o 3 componentes"
         },
     ],
-    sellado: false,
   },
   {
     name: "Trima Accel",
@@ -159,6 +153,5 @@ export const equipos = [
             data: "Reducción en el riesgo de contaminación de los productos y de sepsis en pacientes"
         },
     ],
-    sellado: false,
   },
 ]
