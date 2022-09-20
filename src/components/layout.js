@@ -33,8 +33,9 @@ class Layout extends Component{
   constructor(props){
     super(props);
   }
+
   render() {
-    const {logged_in, children} = this.props;
+    const {logged_in, children, logout} = this.props;
     const logged = logged_in;
     return (
       <div className="bg-white">
@@ -87,15 +88,25 @@ class Layout extends Component{
                   </div>
                 </div>
                 <div className="hidden md:flex md:items-center md:space-x-6">
-                  <Link to="/registro" className="text-base font-medium text-azul_abalat">
-                    Registrarse
-                  </Link>
-                  <Link
-                    to="login"
-                    className="inline-flex items-center rounded-md border border-transparent bg-azul_abalat px-4 py-2 text-base font-medium text-white"
-                  >
-                    Ingresar
-                  </Link>
+                  { logged ?  
+                     <button
+                        onClick={logout}
+                        className="inline-flex items-center rounded-md border border-transparent bg-azul_abalat px-4 py-2 text-base font-medium text-white"
+                      >
+                     Salir
+                   </button>
+                  : <>
+                    <Link to="/registro" className="text-base font-medium text-azul_abalat">
+                      Registrarse
+                    </Link>
+                    <Link
+                      to="/login"
+                      className="inline-flex items-center rounded-md border border-transparent bg-azul_abalat px-4 py-2 text-base font-medium text-white"
+                    >
+                      Ingresar
+                    </Link>
+                  </>}
+                  
                 </div>
               </nav>
               <hr className='bg-azul_abalat w-full h-2 lg:h-4' />

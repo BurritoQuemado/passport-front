@@ -60,7 +60,7 @@ class RegisterForm extends Component {
                 })
             })
             .then(response => response.json())
-            .then(console.log)
+            .then(this.props.login())
         } 
     }
 
@@ -130,7 +130,7 @@ class RegisterForm extends Component {
                                     Contraseña
                                 </label>
                                 <input
-                                    type="text"
+                                    type="password"
                                     name="password"
                                     id="password"
                                     onChange={this.onPasswordChange}
@@ -142,7 +142,7 @@ class RegisterForm extends Component {
                                     Confirmar Contraseña
                                 </label>
                                 <input
-                                    type="text"
+                                    type="password"
                                     name="confirm_password"
                                     id="confirm_pasword"
                                     onChange={this.onConfirmPasswordChange}

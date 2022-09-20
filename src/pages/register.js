@@ -1,7 +1,14 @@
+import React from "react";
 import RegisterForm from "../components/registerForm";
 import LogoAbalat from "../media/logo.png";
+import { useNavigate } from 'react-router-dom';
 
 export default function RegisterPage(){
+    const navigate = useNavigate();
+
+    const login = () => {
+        navigate('/login');
+    } 
     return(
         <>
             <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -16,7 +23,7 @@ export default function RegisterPage(){
 
                 <div className="mt-8 mx-auto w-full max-w-md lg:mx-0 lg:w-screen lg:max-w-full">
                     <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-                        <RegisterForm navi  />
+                        <RegisterForm login={login}  />
                     </div>
                 </div>
             </div>

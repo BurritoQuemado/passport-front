@@ -16,47 +16,37 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      logged_in: false,
-      current_user: {
-        id: '',
-        visited_equipment: []
-      }
+      logged: false,
+      user_id: ''
     }
   }
 
-  changeLogginStatus = (data) => {
-    this.setState({ logged_in: data });
-    console.log(this.state)
-  }
-
-  setUserData = (data) => {
-    data.id? 
+  setLoggedIn = (logged, user_id) => {
     this.setState({
-      current_user: {
-        id: data.id,
-      }
-    }) 
-    : this.setState({
-      current_user: {
-        visited_equipment: data.visited_equipment
-      }
+      logged: logged,
+      user_id: user_id
+    }, () => {
+      console.log(this.state)
     })
   }
 
-  componentDidMount(){
-    console.log(this.state)
+  logout = () => {
+    this.setState({
+      logged: false,
+      user_id: ''
+    })
   }
 
   render(){
     return (
-      <Layout logged_in={this.state.logged_in}>
+      <Layout logged_in={this.state.logged} logout={this.logout}>
         <Routes>
-          <Route path="/" element={ <Home logged_in={ this.state.logged_in } /> } />
-          <Route path="/equipos" element={ <Equipments user_info={this.state.current_user} /> } />
+          <Route path="/" element={ <Home logged_in={this.state.logged} /> } />
+          <Route path="/equipos" element={ <Equipments user_id={this.state.user_id} /> } />
           <Route path="/equipo/:eqName" element={ <Equipment /> } />
-          <Route path='/login' element={ <LoginPage changeLogginStatus={this.changeLogginStatus} setUserData={this.setUserData} /> } />
+          <Route path='/login' element={ <LoginPage setLoggedIn={this.setLoggedIn} /> } />
           <Route path='/registro' element={ <RegisterPage /> } />
-          <Route path="/escanear" element={ <Escanear /> } />
+          <Route path="/escanear" element={ <Escanear user_id={this.state.user_id} /> } />
           <Route path="*" element={ <PageNotFound /> } />
         </Routes>
       </Layout>

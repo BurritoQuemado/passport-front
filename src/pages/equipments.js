@@ -1,7 +1,11 @@
+import React, { Component } from "react";
 import EquipmentList from "../components/equipmentList";
 
-export default function Equipments() {
-    return(
-        <EquipmentList /> 
-    );
+export default class Equipments extends Component {
+
+    render(){
+        return(
+            <EquipmentList /> 
+        );
+    }
 }
