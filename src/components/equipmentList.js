@@ -6,7 +6,17 @@ export default function EquipmentList(props) {
 
   const user_list = props.equipment_list;
 
-  console.log(user_list)
+  const equipments = equipos.map(equipment => {
+    for (let i = 0; i < user_list.length; i++){
+      if(equipment.name === user_list[i].equipment_name){
+        equipment.sellado = true;
+        break;
+      } else {
+        equipment.sellado = false;
+      }
+    }
+    return equipment;
+  });
 
   return (
     <>
