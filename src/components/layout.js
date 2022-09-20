@@ -89,12 +89,13 @@ class Layout extends Component{
                 </div>
                 <div className="hidden md:flex md:items-center md:space-x-6">
                   { logged ?  
-                     <button
+                     <Link
+                        to='/'
                         onClick={logout}
                         className="inline-flex items-center rounded-md border border-transparent bg-azul_abalat px-4 py-2 text-base font-medium text-white"
                       >
                      Salir
-                   </button>
+                   </Link>
                   : <>
                     <Link to="/registro" className="text-base font-medium text-azul_abalat">
                       Registrarse
@@ -165,12 +166,13 @@ class Layout extends Component{
                       }
                     </div>
                     { logged ? <div className="mt-6 px-5">
-                      <button
+                      <Link
+                        to='/'
                         onClick={logout}
                         className="block w-full rounded-md bg-azul_abalat py-3 px-4 text-center font-medium text-white shadow hover:from-teal-600 hover:to-cyan-700"
                       >
                         Salir
-                      </button>
+                      </Link>
                     </div> : 
                     <>
                     <div className="mt-6 px-5">
