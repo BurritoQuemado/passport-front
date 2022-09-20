@@ -165,12 +165,12 @@ class Layout extends Component{
                       }
                     </div>
                     { logged ? <div className="mt-6 px-5">
-                      <Link
-                        to="/registro"
+                      <button
+                        onClick={logout}
                         className="block w-full rounded-md bg-azul_abalat py-3 px-4 text-center font-medium text-white shadow hover:from-teal-600 hover:to-cyan-700"
                       >
                         Salir
-                      </Link>
+                      </button>
                     </div> : 
                     <>
                     <div className="mt-6 px-5">
