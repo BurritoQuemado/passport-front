@@ -11,6 +11,7 @@ function LoginForm (props) {
 
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
+  const [loading, setLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (e) =>{
@@ -20,6 +21,7 @@ function LoginForm (props) {
 
   const handleSubmit = (e) => {
       e.preventDefault();
+      setLoading(true);
       setFormErrors(validate(formValues));
       setIsSubmit(true);
   };
@@ -76,6 +78,7 @@ function LoginForm (props) {
                 autoComplete="email"
                 onChange={handleChange}
                 required
+                disabled={loading}
                 className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-black shadow-sm focus:border-azul_abalat focus:outline-none focus:ring-azul_abalat sm:text-sm"
               />
             </div>
@@ -96,6 +99,7 @@ function LoginForm (props) {
                 autoComplete="current-password"
                 required
                 onChange={handleChange}
+                disabled={loading}
                 className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-black shadow-sm focus:border-azul_abalat focus:outline-none focus:ring-azul_abalat sm:text-sm"
               />
             </div>
@@ -106,7 +110,7 @@ function LoginForm (props) {
     
           <div className="flex items-center justify-between">
             <div className="text-sm">
-              <button className="font-medium text-azul_abalat hover:text-azul_abalat">
+              <button className="font-medium text-azul_abalat hover:text-azul_abalat" disabled={loading}>
                 Recuperar contraseña
               </button>
             </div>
@@ -117,7 +121,29 @@ function LoginForm (props) {
             onClick={handleSubmit}
             className="flex w-full justify-center rounded-md border border-transparent bg-morado_abalat py-2 px-4 text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-azul_abalat focus:ring-offset-2"
           >
-            Ingresar
+            {loading ? (
+              <svg
+                className="animate-spin h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+            ) : "Ingresar"}
+            
           </button>
         </div>
         <div className="flex items-center justify-between mt-4">
