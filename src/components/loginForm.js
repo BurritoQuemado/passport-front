@@ -4,20 +4,14 @@ import { Link } from "react-router-dom";
 
 class LoginForm extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       email: '',
       password: ''
     }
   }
   
-  
-  componentDidMount(){
-    fetch('http://localhost:3000/')
-     .then(response => response.json())
-     .then(console.log)
-  }
 
   handleSubmit = () => {
     fetch('http://localhost:3000/signin', {
@@ -29,7 +23,10 @@ class LoginForm extends Component {
       })
     })
     .then(response => response.json())
-    .then(data => {data.id? console.log(data.id) : console.log(data)})
+    .then(data => {
+      this.props.setLoggedIn(true, data.id);
+      this.props.signin();
+    })
   }
 
   onEmailChange = (event) => {
