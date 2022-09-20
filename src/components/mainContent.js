@@ -22,7 +22,7 @@ class MainContent extends Component {
                 <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
                   { logged ? <div className="rounded-md shadow">
                     <Link
-                      to="/registro"
+                      to="/equipos"
                       className="flex w-full items-center justify-center rounded-md border border-transparent bg-azul_abalat px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
                     >
                       Ver Equipos
