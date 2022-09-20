@@ -95,7 +95,7 @@ class Scanner extends Component {
             onScan={this.handleScan}
           /> : 
           <div className='justify-center mt-6'>
-            <h1 className='text-center'>Escaneando</h1>
+            <h1 className='text-center'>QR Escaneado</h1>
           </div>
           }  
           </div>
