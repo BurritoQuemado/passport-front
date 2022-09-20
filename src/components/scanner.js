@@ -17,7 +17,7 @@ class Scanner extends Component {
     }
 
     componentDidMount(){
-      fetch('http://localhost:3000/equipments')
+      fetch('https://pure-atoll-64455.herokuapp.com/equipments')
       .then(response => response.json())
       .then(equipment => {
         this.setState({valid_scans: equipment})
@@ -45,7 +45,7 @@ class Scanner extends Component {
     
     sendData = (send) => {
       if(send) {
-        fetch('http://localhost:3000/attend', {
+        fetch('https://pure-atoll-64455.herokuapp.com/attend', {
           method: 'post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
