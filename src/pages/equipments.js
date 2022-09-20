@@ -16,7 +16,6 @@ export default class Equipments extends Component {
         .then(response => response.json())
         .then(equipment => {
             this.setState({user_attendee: equipment})
-            console.log(equipment)
         });
     }
 

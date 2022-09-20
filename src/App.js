@@ -33,12 +33,9 @@ function App () {
   useEffect(() => {
     var current_user = sessionStorage.getItem("user_id");
     var current_logged = sessionStorage.getItem("logged");
-    console.log(typeof(current_user));
-    console.log(current_logged);
     if(current_user !== null || current_logged !== null) {
       setLoggedIn(current_logged, current_user);
     }
-    console.log(user_id)
   }, []);
 
   return (
