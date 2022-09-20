@@ -23,7 +23,7 @@ class MainContent extends Component {
                   { logged ? <div className="rounded-md shadow">
                     <Link
                       to="/equipos"
-                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-azul_abalat px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
+                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-azul_abalat px-8 py-3 text-base font-medium text-white md:py-4 md:px-10 md:text-lg"
                     >
                       Ver Equipos
                     </Link>
@@ -32,7 +32,7 @@ class MainContent extends Component {
                   <div className="rounded-md shadow">
                     <Link
                       to="/registro"
-                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-azul_abalat px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
+                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-azul_abalat px-8 py-3 text-base font-medium text-white md:py-4 md:px-10 md:text-lg"
                     >
                       Registrarse
                     </Link>
