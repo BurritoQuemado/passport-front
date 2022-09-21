@@ -12,7 +12,10 @@ class Scanner extends Component {
         valid_qr: false,
         visited_equipment: "",
         valid_scans: [],
-        user_id: this.props.user_id
+        user_id: this.props.user_id,
+        constraints: {
+          facingMode: 'environment'
+        }
       }
     }
 
@@ -54,7 +57,6 @@ class Scanner extends Component {
           })
         })
         .then(response => response.json())
-        .then(this.props.backToEquipmentList())
       }
     }
 
@@ -90,6 +92,7 @@ class Scanner extends Component {
           <div className='pt-6 pb-6 pr-4 pl-4 bg-gray-200'>
             { this.state.scanning?
             <QrReader
+            constraints={this.state.constraints}
             delay={this.state.delay}
             onError={this.handleError}
             onScan={this.handleScan}
