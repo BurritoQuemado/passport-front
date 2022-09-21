@@ -8,32 +8,43 @@ import TrimaImg from '../media/equipos/trima.png'
 
 export const equipos = [
   {
-    name: "Alinity",
+    name: "Alinity i",
     img: AlinityImg,
-    highlight: "Bioquímica clínica, inmunoensayos y sistemas integrados para transformar su laboratorio.",
-    description: "Maximiza el rendimiento de las pruebas con ensayos de alta calidad para ofrecer resultados eficientes y precisos y aumentar la productividad.",
-    description_extra: "Nuestra amplia gama de ensayos diferenciados ofrece resultados uniformes y conmutables entre sistemas que ayuda en la toma de decisiones clínicas y se refleja en los resultados de los pacientes. Los ensayos de la serie Alinity ci-series están armonizados con las directrices de CLSI, lo que garantiza definiciones claras de parámetros de rendimiento y aprovechan la misma tecnología que Abbott desarrolló para sus sistemas heredados ARCHITECT, lo que permite obtener resultados conmutables entre plataformas.",
+    highlight: "Alinity i está diseñado para realizar de manera más eficiente la serologia infecciosa,tanto en suero como en plasma, ocupando un espacio más pequeño, en comparacióncon otros sistemas diseñados para el mismo fin. En una especialidad de pruebas que puede requerir mucho tiempo del personal técnico, la automatización y la flexibilidad adicionales de Alinity i ayudarán a los bancos de sangre a mejorar su productividad y mantener los más altos niveles de precisión.",
+    description: "El Alinity i pertenece a una nueva generación de auto analizadores para inmunoensayos; maximiza el rendimiento de las pruebas con tests de alta calidad para ofrecer resultados eficientes y precisos, de esta manera aumenta la productividad.",
+    description_extra: "Nuestra amplia gama de ensayos diferenciados ofrece resultados uniformes y conmutables entre sistemas que ayudan…",
     extras: [ 
         {
             title: "Método",
             data: "Fotométrica, potenciometría"
         },
         {
+            title: "Tipo de muestra",
+            data: "Suero, plasma, sangre completa, orina."
+        },
+        {
             title: "Capacidad de muestras",
             data: "150"
         },
         {
+            title: "Capacidad de reactivos",
+            data: "Hasta 47"
+        },
+        {
             title: "Rendimiento máximo",
-            data: "1350 pruebas/hora"
+            data: "Hasta 200 pruebas/hora"
+        },
+        {
+            title: "Diseño de ensayos",
+            data: "Libre de interferencias por biotina"
         },
     ],
   },
   {
     name: "InGenius",
     img: IngeniusImg,
-    highlight: "La solución fácil de usar de muestra a resultado dedicada a Diagnóstico Molecular que integra extracción, amplificación e interpretación de resultados con una flexibilidad sin precedentes y una posibilidad de menú de análisis.",
-    description: "Procesa de 1 a 12 muestras en pistas paralelas e independientes. Cuenta con un proceso de extracción universal con PCR múltiple e independiente que permite a los laboratorios crear y ejecutar paneles personalizados de ensayos a pedido.",
-    description_extra: "Ofrece a los laboratorios una capacidad de menú ilimitada, combinando el menú de enfermedades infecciosas CE-IVD más grande disponible en un instrumento de muestra a resultado, con una capacidad abierta real.",
+    highlight: "Dedicado a diagnóstico molecular que integra extracción, amplificación e interpretación de resultados; con la posibilidad de menú de análisis en laboratorios de bancos de células progenitoras hematopoyéticas (BCPH).",
+    description: "Procesa de 1 a 12 muestras en pistas paralelas e independientes por PCR; esto le permite a los laboratorios crear y ejecutar paneles personalizados de ensayos combinando el menú de enfermedades infecciosas CE-IVD más grande disponible en un instrumento totalmente automatizado que va del tubo primario a la obtención de resultado.",
     extras: [ 
         {
             title: "Flexibilidad",
@@ -50,11 +61,36 @@ export const equipos = [
     ],
   },
   {
-    name: "Luminex",
+    name: "Luminex LX 200",
     img: LuminexImg,
-    highlight: "Establece la norma del multiplexado, proporcionando la capacidad de realizar hasta 100 pruebas diferentes en un único volumen de reacción en una plataforma basada en la citometría de flujo.",
-    description: "Es compatible con todos los inmunoensayos multiplex Invitrogen ProcartaPlex y los ensayos de expresión génica multiplex Invitrogen QuantiGene Plex.",
+    highlight: "El equipo Luminex LX-200 es un sistema de multiplexado que, en combinación con los productos LABType permiten la tipificación de ADN SSO inverso y proporcionan una resolución superior para la tipificación HLA A, B, C, DRB1, DRB3, DRB4, DRB5, DQA1, DQB1, DPA1 y DPB1 HLA.",
+    description: "El análisis múltiple reduce drásticamente la mano de obra, los reactivos, las inconsistencias de reacción a reacción y el tiempo de ensayo asociado con un ensayo de formato multipozo, lo que lo convierte en una solución rentable. No es necesario el manejo de tiras o membranas, ni reacciones colorométricas, ni análisis visual de bandas o puntos de color.",
+    description_extra: "Ventajas:",
     extras: [ 
+        {
+            title: "-Reduce drásticamente el tiempo de trabajo y procesamiento con la reacción \"todo en uno\"",
+            data: ""
+        },
+        {
+            title: "-Permite la resolución de ambigüedades sin un ensayo adicional",
+            data: ""
+        },
+        {
+            title: "-Adquisición automatizada de datos mediante análisis de flujo",
+            data: ""
+        },
+        {
+            title: "-Análisis de datos asistido por software y asignación de alelo HLA",
+            data: ""
+        },
+        {
+            title: "-Estabilidad posterior a la hibridación para el procesamiento por lotes",
+            data: ""
+        },
+        {
+            title: "-Solución ideal para laboratorios de bajo volumen y alto rendimiento",
+            data: ""
+        },
         {
             title: "Multiplexado",
             data: "Hasta 80 analitos por muestra"
@@ -76,9 +112,8 @@ export const equipos = [
   {
     name: "MiniSeq",
     img: MiSeqImg,
-    highlight: "Velocidad y simplicidad para la resecuenciación selectiva y la secuenciación de genomas pequeños",
-    description: "Ofrece la primera plataforma de secuenciación de ADN a datos que integra la generación de grupos, la amplificación, la secuenciación y el análisis de datos en un único instrumento",
-    description_extra: "Por sus pequeñas dimensiones  encaja en prácticamente cualquier entorno de laboratorio. Aprovecha el proceso químico de secuenciación por síntesis (SBS, sequencing by synthesis) de Illumina, una tecnología de secuenciación de nueva generación (NGS, next-generation sequencing) probada y que ha permitido generar más del 90 % de los datos de secuenciación en todo el mund",
+    highlight: "Los sistemas de illumina aprovechan el proceso químico de secuenciación por síntesis (SBS, sequencing by synthesis), una tecnología probada de secuenciación de nueva generación (NGS, next-generation sequencing)",
+    description: "Aplicaciones para área de trasplantes: Tipificación de HLA por NGS, quimerismo, genotipificación eritrocitaria de grupos sanguíneos.",
     extras: [ 
         {
             title: "Tamaño",
@@ -101,8 +136,8 @@ export const equipos = [
   {
     name: "Pentra 80 XL",
     img: Pentra80Img,
-    highlight: "Plataforma hematológica compacte y fiable con reticulocitos realizados por fluorescencia",
-    description: "Facilida el diagnóstico gracias al completo estudio reticulocitario, ahorra tiempo e incrementa su eficiencia, total compatilbilidad con las soluciones de HORIBA medical para gran volumen.",
+    highlight: "El ABX Pentra XL 80 es un analizador de hematología de alto rendimiento que permite el análisis de sangre total para la selección del donador en el proceso del banco de sangre, cuenta con una estación de trabajo integrada y ofrece un rendimiento de hasta 80 muestras/hora.",
+    description: "Proporciona informes precisos de pacientes, permite una validación personalizada para cumplir con los requisitos de su laboratorio. Habilita una extensión automática de linealidad en caso de muestras fuera de rango.",
     extras: [ 
         {
             title: "Parámetros",
