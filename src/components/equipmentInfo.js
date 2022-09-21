@@ -74,7 +74,7 @@ export const equipos = [
     ],
   },
   {
-    name: "MiSeq",
+    name: "MiniSeq",
     img: MiSeqImg,
     highlight: "Velocidad y simplicidad para la resecuenciación selectiva y la secuenciación de genomas pequeños",
     description: "Ofrece la primera plataforma de secuenciación de ADN a datos que integra la generación de grupos, la amplificación, la secuenciación y el análisis de datos en un único instrumento",
