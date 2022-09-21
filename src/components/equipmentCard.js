@@ -50,15 +50,15 @@ export default function EquipmentCard() {
               </div>
             </div>
           </div>
-          <div className='justify-center mt-6'>
-            <div className="px-4 py-3 text-center sm:px-6">
-                <button
-                    onClick={backToEquipmentList}
-                    className="inline-flex justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm lg:text-2xl lg:font-semibold font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-azul_abalat focus:ring-offset-2"
-                >
-                    Regresar
-                </button>
-            </div>
+        </div>
+        <div className='justify-center mt-6'>
+          <div className="px-4 py-3 text-center sm:px-6">
+              <button
+                  onClick={backToEquipmentList}
+                  className="inline-flex justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm lg:text-2xl lg:font-semibold font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-azul_abalat focus:ring-offset-2"
+              >
+                  Regresar
+              </button>
           </div>
         </div>
       </>
