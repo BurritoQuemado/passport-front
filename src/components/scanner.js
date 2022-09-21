@@ -12,10 +12,7 @@ class Scanner extends Component {
         valid_qr: false,
         visited_equipment: "",
         valid_scans: [],
-        user_id: this.props.user_id,
-        constraints: {
-          facingMode: 'environment'
-        }
+        user_id: this.props.user_id
       }
     }
 
@@ -92,7 +89,6 @@ class Scanner extends Component {
           <div className='pt-6 pb-6 pr-4 pl-4 bg-gray-200'>
             { this.state.scanning?
             <QrReader
-            constraints={this.state.constraints}
             delay={this.state.delay}
             onError={this.handleError}
             onScan={this.handleScan}
@@ -112,11 +108,11 @@ class Scanner extends Component {
                     alt="Abalat"
                 />
                 <div className="px-4 py-3 text-center sm:px-6">
-                    <button
-                        onClick={this.cleanScan}
-                        className="inline-flex justify-center rounded-md border border-transparent bg-azul_abalat py-2 px-4 text-sm lg:text-2xl lg:font-semibold font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-azul_abalat focus:ring-offset-2"
+                <button
+                        onClick={this.props.backToEquipmentList}
+                        className="inline-flex justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm lg:text-2xl lg:font-semibold font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-azul_abalat focus:ring-offset-2"
                     >
-                        Escanear otro QR
+                        Regresar
                     </button>
                 </div>
               </div>
